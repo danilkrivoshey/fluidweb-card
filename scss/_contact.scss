@@ -1,0 +1,115 @@
+.contact {
+    background-color: #f9f9ff;
+    color: #353353;
+    &__body {
+        position: relative;
+        z-index: 3;
+        height: calc(100% - 116px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__info {
+        text-align: center;
+        &__avatar {
+            position: relative;
+            display: none;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &__name {
+            font-size: 60px;
+            font-weight: 600;
+        }
+        &__position {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 10px 0 20px;
+        }
+        &__social-networks {
+            a {
+                font-size: 24px;
+                color: inherit;
+                transition: color 0.3s ease-in-out;
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+            }
+        }
+        &__person {
+            margin: 20px 0 45px;
+            display: flex;
+            flex-direction: column;
+        }
+        &__phone,
+        &__email {
+            font-size: 18px;
+            color: inherit;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+                color: #44d7b6;
+            }
+        }
+        .btn-wrapper {
+            button {
+                &:not(:last-child) {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .contact {
+        &__info {
+            &__avatar {
+                display: block;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contact {
+        &__body {
+            height: calc(100vh - 87px);
+        }
+        &__info {
+            &__name {
+                font-size: 32px;
+            }
+            &__position {
+                font-size: 14px;
+                margin: 5px 0 15px;
+            }
+            &__social-networks {
+                a {
+                    font-size: 18px;
+                }
+            }
+            &__person {
+                margin: 10px 0 30px;
+            }
+            &__phone,
+            &__email {
+                font-size: 14px;
+            }
+            .btn-wrapper {
+                button {
+                    &:not(:last-child) {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
