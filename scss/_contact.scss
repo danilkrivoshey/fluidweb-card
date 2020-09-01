@@ -79,7 +79,7 @@
 @media screen and (max-width: 500px) {
     .contact {
         &__body {
-            height: calc(100vh - 87px);
+            height: calc(100% - 85px);
         }
         &__info {
             &__name {
