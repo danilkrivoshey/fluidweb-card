@@ -3,8 +3,24 @@ window.addEventListener('load', main);
 
 function main() {
     var canvasWrapper = document.querySelector('.canvas-wrapper');
+
     document.addEventListener('touchmove', function (e) {
         e.preventDefault();
+    });
+
+    var granimInstance = new Granim({
+        element: '#granim-canvas',
+        isPausedWhenNotInView: true,
+        states: {
+            "default-state": {
+                gradients: [
+                    ['#f1e5e8', '#e7edff'],
+                    ['#cde8fa', '#f2f5e3'],
+                    ['#edebfc', '#f1e5e8'],
+                ],
+                transitionSpeed: 2000
+            }
+        }
     });
 
     if (!window.matchMedia('(max-width: 1024px').matches) {
@@ -17,24 +33,9 @@ function main() {
     } else {
         canvasWrapper.classList.remove('remove');
 
-        var granimInstance = new Granim({
-            element: '#granim-canvas',
-            isPausedWhenNotInView: true,
-            states: {
-                "default-state": {
-                    gradients: [
-                        ['#f1e5e8', '#e7edff'],
-                        ['#cde8fa', '#f2f5e3'],
-                        ['#edebfc', '#f1e5e8'],
-                    ],
-                    transitionSpeed: 2000
-                }
-            }
-        });
-
         var shareButton = document.getElementById('share-btn');
 
-        if (navigator.share && navigator.canShare) {
+        if (navigator.share || navigator.canShare) {
             shareButton.classList.add("active");
             shareButton.addEventListener('click', function () {
                 navigator.share({
