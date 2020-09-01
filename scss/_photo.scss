@@ -323,7 +323,7 @@ $transition-fast: 0.2s cubic-bezier(0.77, 0, 0.175, 1);
     }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1024px) {
     .photo {
         display: none;
     }

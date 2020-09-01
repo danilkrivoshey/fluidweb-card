@@ -10,6 +10,29 @@
     }
 }
 
+html,
+body {
+    position: fixed;
+}
+
+html,
+body {
+    position: relative;
+    overflow: hidden;
+}
+
+body {
+    position: fixed;
+    overflow: hidden;
+}
+
+body {
+    position: fixed;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -129,9 +152,31 @@ a {
     }
 }
 
+.canvas-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    #granim-canvas {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-size: cover;
+        background-position: 0 85%;
+    }
+    &.remove {
+        display: none;
+    }
+}
+
 .btn-contact {
     cursor: pointer;
     border: none;
+    margin: 0 auto;
     background-color: #ff4c60;
     border-radius: 25px;
     font-size: 20px;
@@ -174,31 +219,10 @@ a {
     }
 }
 
-#facebook-btn {
-    background-color: #4867aa;
-    color: #f9f9ff;
-}
-
-#instagram-btn {
-    background-color: #bc1888;
-    color: #f9f9ff;
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-}
-
-#linkedin-btn {
-    background-color: #0077b5;
-    color: #f9f9ff;
-}
-
-#telegram-btn {
-    background-color: #139bd0;
-    color: #f9f9ff;
-}
-
 #share-btn {
     display: none;
     &.active {
-        display: block;
+        display: inline-block;
     }
 }
 
@@ -221,104 +245,7 @@ a {
     }
 }
 
-// .share-dialog {
-//     display: none;
-//     position: fixed;
-//     top: 50%;
-//     left: 50%;
-//     width: 95%;
-//     max-width: 400px;
-//     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-//     z-index: 99;
-//     padding: 20px;
-//     border-radius: 20px;
-//     background-color: #f9f9ff;
-//     transform: translate(-50%, -50%);
-//     &.is-open {
-//         display: block;
-//     }
-//     &__header {
-//         text-align: right;
-//     }
-
-//     &__copy {
-//         display: block;
-//         width: 100%;
-//         text-align: center;
-//         span {
-//             display: inline-block;
-//             background-color: #353353;
-//             color: #f9f9ff;
-//             font-weight: 600;
-//             font-size: 14px;
-//             border-radius: 16px;
-//             padding: 5px 10px;
-//             margin: 5px auto 10px;
-//             opacity: 0;
-//             transition: opacity 0.3s ease-in-out;
-//         }
-//         &.show {
-//             span {
-//                 opacity: 1;
-//             }
-//         }
-//     }
-
-//     &__links {
-//         display: grid;
-//         grid-template-rows: 1fr 1fr;
-//         grid-template-columns: 1fr 1fr;
-//         grid-gap: 20px;
-//         margin-bottom: 20px;
-//     }
-
-//     &__button {
-//         cursor: pointer;
-//         border: none;
-//         font-size: 16px;
-//         font-weight: 600;
-//         padding: 10px;
-//     }
-
-//     &__main-link {
-//         cursor: pointer;
-//         text-align: center;
-//         padding: 10px;
-//         border-radius: 8px;
-//         color: #f9f9ff;
-//         background-color: #ff4c60;
-//         transition: all 0.3s ease-in-out;
-//         &:hover {
-//             background-color: #ffd15e;
-//             color: #353353;
-//         }
-//         &:active {
-//             background-color: #6b6be3;
-//             color: #f9f9ff;
-//         }
-//     }
-// }
-
-// .overlay {
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     left: 0;
-//     right: 0;
-//     width: 100%;
-//     height: 100%;
-//     opacity: 0;
-//     background-color: rgb(33, 33, 33);
-//     border-color: rgb(33, 33, 33);
-//     will-change: opacity;
-//     transition: opacity 0.3s ease-in-out;
-//     &.active {
-//         opacity: 0.46;
-//         z-index: 9;
-//     }
-// }
-
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1024px) {
     .section {
         &__header {
             &_desktop {
@@ -332,12 +259,16 @@ a {
             letter-spacing: 0.2em;
         }
     }
+
+    #parallax {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 500px) {
     .section {
         &__title {
-            font-size: 28px;
+            font-size: 26px;
         }
         &__subtitle {
             font-size: 12px;

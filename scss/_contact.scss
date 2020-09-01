@@ -60,12 +60,13 @@
         }
         .btn-wrapper {
             display: block;
+            position: relative;
             text-align: center;
         }
     }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1024px) {
     .contact {
         &__info {
             &__avatar {
@@ -94,7 +95,7 @@
                 }
             }
             &__person {
-                margin: 10px 0 30px;
+                margin: 15px 0 30px;
             }
             &__phone,
             &__email {
