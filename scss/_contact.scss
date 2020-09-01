@@ -59,11 +59,8 @@
             }
         }
         .btn-wrapper {
-            button {
-                &:not(:last-child) {
-                    margin-right: 20px;
-                }
-            }
+            display: block;
+            text-align: center;
         }
     }
 }
@@ -102,13 +99,6 @@
             &__phone,
             &__email {
                 font-size: 14px;
-            }
-            .btn-wrapper {
-                button {
-                    &:not(:last-child) {
-                        margin-right: 10px;
-                    }
-                }
             }
         }
     }
