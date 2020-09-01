@@ -43,7 +43,7 @@ function main() {
         relativeInput: true,
     });
 
-    if (!window.matchMedia('(max-width: 1024px').matches) {
+    if (!window.matchMedia('(max-width: 1024px)').matches) {
         canvasWrapper.classList.add('remove');
     } else {
         canvasWrapper.classList.remove('remove');
