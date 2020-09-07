@@ -19,18 +19,18 @@ var granimInstance = new Granim({
 function main() {
     var canvasWrapper = document.querySelector('.canvas-wrapper');
 
-    document.addEventListener('touchmove', function (e) {
-        e.preventDefault();
-    });
+    document.addEventListener('touchmove', { passive: false });
 
+    var name = document.querySelector('.contact__info__name');
+    var position = document.querySelector('.contact__info__position');
     var shareButton = document.getElementById('share-btn');
 
     if (navigator.share) {
         shareButton.classList.add("active");
         shareButton.addEventListener('click', function () {
             navigator.share({
-                title: 'Follow the link to contact information \n Maryna Kisil',
-                text: 'Follow the link to contact information \n Maryna Kisil',
+                title: 'FluidWeb | ' + position + ' | ' + name,
+                text: 'FluidWeb | ' + position + ' | ' + name,
                 url: 'https://danilkrivoshey.github.io/fluidweb-card/'
             }).then(() => {
                 console.log('Thanks for sharing!');
