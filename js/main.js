@@ -21,8 +21,8 @@ function main() {
 
     document.addEventListener('touchmove', { passive: false });
 
-    var name = document.querySelector('.contact__info__name');
-    var position = document.querySelector('.contact__info__position');
+    var name = document.querySelector('.contact__info__name').textContent;
+    var position = document.querySelector('.contact__info__position').textContent;
     var shareButton = document.getElementById('share-btn');
 
     if (navigator.share) {
