@@ -21,16 +21,16 @@ function main() {
 
     document.addEventListener('touchmove', { passive: false });
 
-    var name = document.querySelector('.contact__info__name').innerHTML.trim();
-    var position = document.querySelector('.contact__info__position').innerHTML.trim();
+    var name = document.querySelector('.contact__info__name').innerHTML;
+    var position = document.querySelector('.contact__info__position').innerHTML;
     var shareButton = document.getElementById('share-btn');
 
     if (navigator.share) {
         shareButton.classList.add("active");
         shareButton.addEventListener('click', function () {
             navigator.share({
-                title: 'FluidWeb | ' + position + ' | ' + name,
-                text: 'FluidWeb | ' + position + ' | ' + name,
+                title: 'FluidWeb | ' + position.trim() + ' | ' + name.trim(),
+                text: 'FluidWeb | ' + position.trim() + ' | ' + name.trim(),
                 url: 'https://danilkrivoshey.github.io/fluidweb-card/'
             }).then(() => {
                 console.log('Thanks for sharing!');
