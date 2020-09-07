@@ -31,7 +31,7 @@ function main() {
             navigator.share({
                 title: 'FluidWeb | ' + position.trim() + ' | ' + name.trim(),
                 text: 'FluidWeb | ' + position.trim() + ' | ' + name.trim(),
-                url: 'https://danilkrivoshey.github.io/fluidweb-card/'
+                url: window.location.href || document.URL
             }).then(() => {
                 console.log('Thanks for sharing!');
             }).catch(console.error);
